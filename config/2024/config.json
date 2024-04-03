@@ -14,6 +14,40 @@
           "code": "scouter"
         },
         {
+          "title": "Competition",
+          "type": "select",
+          "required": true,
+          "code": "competition",
+          "choices": {
+            "Consumers": "MSC-Consumers",
+            "Kettering1": "Kettering1",
+            "Milford": "Milford",
+            "Battle Creek": "Battle Creek",
+            "Berrien Springs": "Berrien Springs",
+            "Jackson": "Jackson",
+            "Belleville": "Belleville",
+            "Escanaba": "Escanaba",
+            "Kettering2": "Kettering2",
+            "St. Joseph": "St. Joseph",
+            "Woodhaven": "Woodhaven",
+            "Wayne State": "Wayne State",
+            "LSSU": "LSSU",
+            "Muskegon": "Muskegon",
+            "Traverse City": "Traverse City",
+            "Ann Arbor": "Ann Arbor",
+            "Lansing": "Lansing",
+            "Midland": "Midland",
+            "West Michigan": "West Michigan",
+            "Livonia": "Livonia",
+            "Troy1": "Troy1",
+            "Renaissance": "Renaissance",
+            "Kentwood": "Kentwood",
+            "Macomb": "Macomb",
+            "Central Michigan": "Central Michigan"
+          },
+          "defaultValue": "Consumers"
+        },
+        {
           "title": "Match Number",
           "type": "number",
           "required": true,
@@ -36,16 +70,52 @@
         },
         {
           "title": "Team Number",
-          "type": "number",
+          "type": "select",
           "required": true,
-          "code": "teamNumber"
-        },
-        {
-          "title": "Human Player at Amp",
-          "type": "boolean",
-          "required": false,
-          "defaultValue": false,
-          "code": "humanPlayer"
+          "code": "teamNumber",
+          "choices": {
+            "1": "1 The Juggernauts",
+            "68": "68 Truck Town Thunder",
+            "123": "123 Team - Cosmos",
+            "280": "280 TnT",
+            "302": "302 The Dragons",
+            "494": "494 Martians",
+            "858": "858 Demons Robotics",
+            "1481": "1481 The Riveters",
+            "1506": "1506 Metal Muscle",
+            "1684": "1684 The Chimeras",
+            "1701": "1701 RoboCubs",
+            "2054": "2054 Tech Vikes",
+            "2586": "2586 Copper Bots",
+            "2611": "2611 Jacktown Vectors",
+            "3536": "3536 Electro Eagles",
+            "3538": "3538 RoboJackets",
+            "3539": "3539 Byting Bulldogs",
+            "3546": "3546 Buc'n'Gears",
+            "3572": "3572 Wavelength",
+            "3656": "3656 Dexter Dreadbots",
+            "3688": "3688 Norsemen",
+            "3770": "3770 BlitzCreek",
+            "3875": "3875 Red Storm Robotics",
+            "4130": "4130 The Blue Devils",
+            "4381": "4381 Twisted Devils",
+            "4967": "4967 That ONE Team-OurNextEngineers",
+            "5436": "5436 Cyber Cats",
+            "5530": "5530 The Greenhills Lawnmowers",
+            "5675": "5675 WiredCats",
+            "5676": "5676 The H.E.R.O.E.S",
+            "6113": "6113 M.A.R.C. 1",
+            "6570": "6570 Whiteford Bobcats",
+            "7154": "7154 TheROK",
+            "7501": "7501 Golden Gears",
+            "8373": "8373 The Flying Octopi: 8373 R.R.T.",
+            "8427": "8427 Protobots",
+            "8517": "8517 Bounty Hunters",
+            "8873": "8873 Rockefeller Robotics",
+            "9176": "9176 Greenspire Steel Sturgeons",
+            "9215": "9215 T-Town Tech"
+          },
+          "defaultValue": 2611
         },
         {
           "title": "No Show",
@@ -60,7 +130,7 @@
       "name": "Autonomous",
       "fields": [
         {
-          "title": "Mobility?",
+          "title": "Leave",
           "type": "boolean",
           "defaultValue": false,
           "required": false,
@@ -68,15 +138,7 @@
         },
         {
           "code": "auamp",
-          "title": "Amp Scored",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "auampm",
-          "title": "Amp Missed",
+          "title": "Auton Amp Scored",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
@@ -84,41 +146,20 @@
         },
         {
           "code": "ausc",
-          "title": "Speaker Scored",
+          "title": "Auton Speaker Scored",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
           "required": false
         },
         {
-          "code": "auskpm",
-          "title": "Speaker Missed",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "aQ2",
-          "title": "Pickup from Q2",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
-          "code": "aQ3",
-          "title": "Pickup from Q3",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
-          "title": "Auto Piece 1",
+          "title": "Auto Pickup 1",
           "type": "select",
           "defaultValue": "\"\"",
           "required": false,
           "code": "ap1",
           "choices": {
+            "0": 0,
             "1": 1,
             "2": 2,
             "3": 3,
@@ -130,12 +171,13 @@
           }
         },
         {
-          "title": "Auto Piece 2",
+          "title": "Auto Pickup 2",
           "type": "select",
           "defaultValue": "\"\"",
           "required": false,
           "code": "ap2",
           "choices": {
+            "0": 0,
             "1": 1,
             "2": 2,
             "3": 3,
@@ -147,12 +189,13 @@
           }
         },
         {
-          "title": "Auto Piece 3",
+          "title": "Auto Pickup 3",
           "type": "select",
           "defaultValue": "\"\"",
           "required": false,
           "code": "ap3",
           "choices": {
+            "0": 0,
             "1": 1,
             "2": 2,
             "3": 3,
@@ -164,12 +207,13 @@
           }
         },
         {
-          "title": "Auto Piece 4",
+          "title": "Auto Pickup 4",
           "type": "select",
           "defaultValue": "\"\"",
           "required": false,
           "code": "ap4",
           "choices": {
+            "0": 0,
             "1": 1,
             "2": 2,
             "3": 3,
@@ -181,12 +225,13 @@
           }
         },
         {
-          "title": "Auto Piece 5",
+          "title": "Auto Pickup 5",
           "type": "select",
           "defaultValue": "\"\"",
           "required": false,
           "code": "ap5",
           "choices": {
+            "0": 0,
             "1": 1,
             "2": 2,
             "3": 3,
@@ -198,12 +243,13 @@
           }
         },
         {
-          "title": "Auto Piece 6",
+          "title": "Auto Pickup 6",
           "type": "select",
           "defaultValue": "\"\"",
           "required": false,
           "code": "ap6",
           "choices": {
+            "0": 0,
             "1": 1,
             "2": 2,
             "3": 3,
@@ -215,12 +261,13 @@
           }
         },
         {
-          "title": "Auto Piece 7",
+          "title": "Auto Pickup 7",
           "type": "select",
           "defaultValue": "\"\"",
           "required": false,
           "code": "ap7",
           "choices": {
+            "0": 0,
             "1": 1,
             "2": 2,
             "3": 3,
@@ -232,12 +279,13 @@
           }
         },
         {
-          "title": "Auto Piece 8",
+          "title": "Auto Pickup 8",
           "type": "select",
           "defaultValue": "\"\"",
           "required": false,
           "code": "ap8",
           "choices": {
+            "0": 0,
             "1": 1,
             "2": 2,
             "3": 3,
@@ -254,33 +302,11 @@
       "name": "Teleop",
       "fields": [
         {
-          "code": "tcoop",
-          "title": "Coopertition",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
           "code": "tamps",
-          "title": "Amp Scored",
+          "title": "Teleop Amp Scored",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
-          "required": false
-        },
-        {
-          "code": "tampm",
-          "title": "Amp Missed",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "tampna",
-          "title": "Amp Not Attempted",
-          "type": "boolean",
-          "defaultValue": false,
           "required": false
         },
         {
@@ -298,42 +324,6 @@
           "defaultValue": 0,
           "min": 0,
           "required": false
-        },
-        {
-          "code": "tsm",
-          "title": "Speaker Missed",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "tspeakna",
-          "title": "Speaker Not Attempted",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
-          "code": "tQ1",
-          "title": "Scored from Q1",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
-          "code": "tQ2",
-          "title": "Scored from Q2",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
-          "code": "tQ3",
-          "title": "Scored from Q3",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
         }
       ]
     },
@@ -346,38 +336,16 @@
           "required": true,
           "code": "epo",
           "choices": {
-            "No": "No Climb",
-            "Fc": "Failed Climb",
-            "P": "Parked",
-            "Os": "Onstage",
-            "Sl": "Spotlight"
+            "0": "No Park",
+            "1": "Parked",
+            "3": "Onstage",
+            "4": "Spotlight"
           },
-          "defaultValue": "No Climb"
-        },
-        {
-          "title": "Harmony",
-          "type": "select",
-          "required": true,
-          "code": "harm",
-          "choices": {
-            "Not": "Not Completed",
-            "Fir": "First on Chain",
-            "Sec": "Second on Chain",
-            "Thir": "Third on Chain"
-          },
-          "defaultValue": "Not Completed"
-        },
-        {
-          "code": "spotMade",
-          "title": "Spotlights Made",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
+          "defaultValue": "0"
         },
         {
           "code": "cn",
-          "title": "Note in Trap?",
+          "title": "Trap Made",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
@@ -389,32 +357,33 @@
       "name": "Postmatch",
       "fields": [
         {
-          "code": "or",
           "title": "Offense Skill",
           "type": "select",
+          "defaultValue": "",
+          "required": false,
+          "code": "os",
           "choices": {
             "1": "Not Effective",
-            "2": "Average",
-            "3": "Very Effective",
+            "3": "Average",
+            "5": "Very Effective",
             "x": "Not Observed"
-          },
-          "required": false
+          }
         },
         {
-          "code": "dr",
           "title": "Defense Skill",
           "type": "select",
+          "defaultValue": "",
+          "required": false,
+          "code": "ds",
           "choices": {
             "1": "Not Effective",
-            "2": "Average",
-            "3": "Very Effective",
+            "3": "Average",
+            "5": "Very Effective",
             "x": "Not Observed"
-          },
-          "defaultValue": "x",
-          "required": false
+          }
         },
         {
-          "code": "d",
+          "code": "dedbot",
           "title": "Died",
           "type": "boolean",
           "defaultValue": false,
@@ -423,6 +392,13 @@
         {
           "code": "to",
           "title": "Tipped Over",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false
+        },
+        {
+          "code": "dam",
+          "title": "Dammaged",
           "type": "boolean",
           "defaultValue": false,
           "required": false
